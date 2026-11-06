@@ -75,9 +75,9 @@ int checkvideomode(int *xdim, int *ydim, int bitspp, int fullsc, int strict)
 #endif
 
 	// fix up the passed resolution values to be multiples of 8
-	// and at least 320x200 or at most MAXXDIMxMAXYDIM
-	if (*xdim < 320) *xdim = 320;
-	if (*ydim < 200) *ydim = 200;
+	// and at least 256x192 (Nintendo DS screens) or at most MAXXDIMxMAXYDIM
+	if (*xdim < 256) *xdim = 256;
+	if (*ydim < 192) *ydim = 192;
 	if (*xdim > MAXXDIM) *xdim = MAXXDIM;
 	if (*ydim > MAXYDIM) *ydim = MAXYDIM;
 	*xdim &= 0xfffffff8l;
